@@ -7,11 +7,17 @@
         <h:outputStylesheet name="css/jsfcrud.css"/>
     </h:head>
     <h:body>
-        Hello from Facelets
+        <h1>
+            <h:outputText value="#{saludador.saludo}"></h:outputText>
+        </h1>
         <br />
         <h:link outcome="welcomePrimefaces" value="Primefaces welcome page" />
         <br />
         <h:link outcome="/contacto/List" value="Show All Contacto Items"/>
+        <h:form>
+            <h:inputText value="#{saludador.saludo}"></h:inputText>
+            <h:commandLink action="#{saludador.saluda}" value="Cambiar saludo"></h:commandLink>
+        </h:form>
     </h:body>
 
 </html>

@@ -23,4 +23,9 @@ public class Saludador implements Serializable {
         this.saludo = saludo;
     }
 
+    public String saluda() {
+        System.out.println(saludo);
+        return "welcomePrimefraces";
+    }
+
 }

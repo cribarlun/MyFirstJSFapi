@@ -5,6 +5,7 @@ import controller.util.JsfUtil;
 import controller.util.PaginationHelper;
 
 import java.io.Serializable;
+import java.util.Locale;
 import java.util.ResourceBundle;
 import javax.ejb.EJB;
 import javax.inject.Named;
@@ -176,6 +177,16 @@ public class ContactoController implements Serializable {
     public String previous() {
         getPagination().previousPage();
         recreateModel();
+        return "List";
+    }
+
+    public String cambiarIdioma() {
+        FacesContext.getCurrentInstance().getViewRoot().setLocale(new Locale("es", "ES"));
+        return "List";
+    }
+
+    public String cambiarIngles() {
+        FacesContext.getCurrentInstance().getViewRoot().setLocale(Locale.ROOT);
         return "List";
     }
 
